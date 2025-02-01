@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: Outlets
+    
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
@@ -32,7 +34,6 @@ class ViewController: UIViewController {
         
         if userGotItRight {
             sender.backgroundColor = .green
-            
         } else {
             sender.backgroundColor = .red
         }
@@ -41,14 +42,12 @@ class ViewController: UIViewController {
     
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
             self.updateUI()}
-
-//        Timer.scheduledTimer(timeInterval: 0.2, target:self, selector: #selector(updateUI), userInfo: nil, repeats: false) // does not change the button colors
     }
     
     
 
     @objc func updateUI() {
-        
+        scoreLabel.text = "Score: \(quizBrain.getScore())/11"
         questionLabel.text = quizBrain.getQuestionText()
         progressBar.progress = quizBrain.getProgress()
         trueButton.backgroundColor = .clear
