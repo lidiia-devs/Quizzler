@@ -54,9 +54,10 @@ class ViewController: UIViewController {
         
         let answerChoices = quizBrain.getAnswers()
         
-        choice1.setTitle(answerChoices[0], for: .normal)
-        choice2.setTitle(answerChoices[1], for: .normal)
-        choice3.setTitle(answerChoices[2], for: .normal)
+        
+//        choice1.setTitle(answerChoices[0], for: .normal)
+//        choice2.setTitle(answerChoices[1], for: .normal)
+//        choice3.setTitle(answerChoices[2], for: .normal)
                
         progressBar.progress = quizBrain.getProgress()
         
@@ -65,6 +66,7 @@ class ViewController: UIViewController {
         choice1.backgroundColor = .clear
         choice2.backgroundColor = .clear
         choice3.backgroundColor = .clear
+        
     }
     
 }
